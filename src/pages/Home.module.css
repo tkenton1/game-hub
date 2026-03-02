@@ -1,0 +1,143 @@
+/* Home.css */
+
+/* Hero */
+.gh-hero {
+  padding: 22px 0 14px;
+}
+
+.gh-hero .gh-container {
+  border: 1px solid var(--border, rgba(127, 127, 127, 0.35));
+  border-radius: 18px;
+  padding: 22px 18px;
+  background: radial-gradient(
+      1200px 280px at 10% 0%,
+      color-mix(in srgb, var(--link, #646cff) 35%, transparent),
+      transparent 60%
+    ),
+    color-mix(in srgb, var(--bg, #242424) 88%, #fff 3%);
+}
+
+.gh-hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.gh-hero p {
+  margin: 0 0 16px;
+  opacity: 0.85;
+  max-width: 60ch;
+}
+
+.gh-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Sections */
+.gh-section {
+  padding: 26px 0 6px;
+}
+
+.gh-section-header p {
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+/* Cards grid */
+.gh-card-grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.gh-card {
+  border: 1px solid var(--border, rgba(127, 127, 127, 0.35));
+  border-radius: 16px;
+  padding: 16px;
+  background: color-mix(in srgb, var(--bg, #242424) 86%, #fff 3%);
+  transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.gh-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--border, rgba(127, 127, 127, 0.35)) 60%, #fff 20%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.gh-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.gh-card p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Card footer */
+.gh-card-footer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Badge */
+.gh-badge {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border, rgba(127, 127, 127, 0.35));
+  opacity: 0.85;
+}
+
+/* Lists look nicer */
+.gh-section ul,
+.gh-section ol {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.gh-section li {
+  margin: 6px 0;
+}
+
+.gh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border, rgba(127, 127, 127, 0.35));
+  background: color-mix(in srgb, var(--bg, #242424) 80%, #fff 4%);
+  color: inherit;
+
+  text-decoration: none; /* this is the key part for <a> */
+  font-weight: 600;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.gh-button:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--border, rgba(127, 127, 127, 0.35)) 60%, #fff 20%);
+  background: color-mix(in srgb, var(--bg, #242424) 70%, #fff 6%);
+}
+
+.gh-button:active {
+  transform: translateY(0px);
+}
+
+.gh-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
