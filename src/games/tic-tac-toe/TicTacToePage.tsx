@@ -9,13 +9,6 @@ import type { GameState } from "./logic/types";
 
 export function TicTacToePage() {
 
-  // TODO:
-  // - state: const [state, setState] = useState(createInitialState())
-  // - click handler: setState(prev => applyMove(prev, index))
-  // - reset handler: setState(createInitialState())
-  // - render header (title/status/reset)
-  // - render Board passing cells + onCellClick
-
   const [gameState, setGameState] = useState<GameState>(createInitialState);
 
   return (

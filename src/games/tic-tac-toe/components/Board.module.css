@@ -1,5 +1,7 @@
 .board {
   display: grid;
-  gap: 1px;
+  gap: 5px;
   grid-template-columns: repeat(3, 1fr);
+  max-width: 385px;
+  margin: 0 auto;
 }

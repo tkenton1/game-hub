@@ -9,8 +9,6 @@ type Props = {
 };
 
 export function Square(props: Props) {
-  // TODO: render a button with the value
-  // className can use props.highlight
   return(
     <button className={styles.cell + " " + (props.highlight ? styles.highlight : "")}
             disabled={props.disabled}

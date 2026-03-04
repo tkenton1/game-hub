@@ -1,22 +1,18 @@
-import type { Cell, Player, GameState } from "./types";
+import type { Cell, GameState } from "./types";
 import { calculateWinner, isDraw } from "./winner";
-import { getNextPlayer, getStatusText } from "./state";
+import { getNextPlayer } from "./state";
 
 export function isMoveLegal(cells: Cell[], index: number): boolean {
-  // Out of range
-  if(index > cells.length) return false;
-
-  // Space occupied
-  if(cells[index] != null) return false;
-
-  return true;
+  // (not) Out of range OR Space occupied 
+  return !(index > cells.length || cells[index] != null);
 }
 
 export function applyMove(state: GameState, index: number): GameState {
-  if(state.status != "playing") return state;
 
-  if(isMoveLegal(state.cells, index) == false) return state;
+  // Never apply if move if 'illegal' or not playing
+  if(state.status != "playing" ||isMoveLegal(state.cells, index) == false) return state;
 
+  // Copy state into an obj that can be modified + returned
   const nextCells = [...state.cells];
   nextCells[index] = state.currentPlayer;
 
@@ -24,14 +20,14 @@ export function applyMove(state: GameState, index: number): GameState {
 
   const win = calculateWinner(nextState.cells);
   const draw = isDraw(nextState.cells, win.winner);
-  // Game won
-  if(win.winner) {
+
+  if(win.winner) {  // Game won
     nextState.status = "won"
     nextState.winningLine = win.winningLine;
     nextState.winner = win.winner;
   } else if(draw) { // Game drawn
     nextState.status = "draw";
-  } else { // Continue playing
+  } else {          // Continue playing
     nextState.currentPlayer = getNextPlayer(nextState.currentPlayer);
   }
 

@@ -10,8 +10,6 @@ type Props = {
 };
 
 export function Board(props: Props) {
-  // TODO: render 9 squares in a grid using map
-  // pass highlight if index is in winningLine
   return(
     <div className={styles.board}>
       {props.cells.map((c, i) => (
