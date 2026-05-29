@@ -18,6 +18,13 @@ const GAMES: Game[] = [
     path: "/tic-tac-toe",
   },
   {
+    id: "sudoku",
+    title: "Sudoku",
+    description: "Aaa.",
+    status: "Ready",
+    path: "/sudoku",
+  },
+  {
     id: "snake",
     title: "Snake",
     description: "Looking at game loops, collisions, and timing + effects.",
@@ -115,7 +122,8 @@ export function Home() {
           <ol>
             <li>Landing page &#9989;</li>
             <li>Routing &#9989;</li>
-            <li>Tic-Tac-Toe</li>
+            <li>Tic-Tac-Toe &#9989;</li>
+            <li>Sudoku</li>
             <li>Snake</li>
             <li>Minesweeper</li>
           </ol>

@@ -37,6 +37,16 @@ export function Layout() {
                   Tic-Tac-Toe
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/sudoku"
+                  className={({ isActive }) =>
+                    `${styles["gh-nav-link"]} ${isActive ? styles["is-active"] : ""}`
+                  }
+                >
+                  Sudoku
+                </NavLink>
+              </li> 
             </ul>
           </nav>
         </div>

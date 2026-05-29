@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: min(92vw, 540px);
+  aspect-ratio: 1 / 1;
+
+  border: 2px solid var(--border, rgba(127, 127, 127, 0.35));
+  border-radius: 12px;
+  overflow: hidden;
+
+  background: color-mix(in srgb, var(--bg, #242424) 92%, #fff 2%);
+
+  margin: 0 auto;
+}
+
+.cellWrap {
+  border-right: 1px solid var(--border, rgba(127, 127, 127, 0.35));
+  border-bottom: 1px solid var(--border, rgba(127, 127, 127, 0.35));
+}
+
+/* thicker separators after col 2 and 5 */
+.vDivider {
+  border-right-width: 2px;
+}
+
+/* thicker separators after row 2 and 5 */
+.hDivider {
+  border-bottom-width: 2px;
+}

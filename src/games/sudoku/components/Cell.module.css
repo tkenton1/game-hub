@@ -1,0 +1,21 @@
+.cell {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+  color: inherit;
+
+  text-align: center;
+  font-size: clamp(16px, 2.4vw, 22px);
+  font-weight: 650;
+
+  /* prevents weird padding differences across browsers */
+  padding: 0;
+}
+
+.cell:focus {
+  background: color-mix(in srgb, var(--link, #646cff) 18%, transparent);
+}

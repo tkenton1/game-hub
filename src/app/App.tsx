@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Home } from "../pages/Home";
-import { TicTacToePage } from "../games/tic-tac-toe/TicTacToePage";
 import { NotFound } from "../pages/NotFound";
+import { TicTacToePage } from "../games/tic-tac-toe/TicTacToePage";
+import { SudokuPage } from "../games/sudoku/SudokuPage";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Route index element={<Home />} />
 
         <Route path="tic-tac-toe" element={<TicTacToePage />} />
+        <Route path="sudoku" element={<SudokuPage />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>
