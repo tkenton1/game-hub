@@ -6,6 +6,7 @@ import { Grid } from "./components/Grid";
 import { createInitialState } from "./logic/state";
 import { sudokuReducer } from "./logic/reducer";
 import type { CellValue, Digit, Position } from "./logic/types"
+import { PUZZLE_1 } from "./logic/puzzles"
 
 export function SudokuPage() {
 
@@ -38,15 +39,32 @@ export function SudokuPage() {
         <div className={page.actions}>
           <button
             className={styles.button}
+            onClick={() => dispatch({ type: "loadPuzzle", puzzle: PUZZLE_1 })}
+          >
+            Easy
+          </button> 
+          <button
+            className={styles.button}
             onClick={() => dispatch({ type: "reset" })}
-          /> 
+          >
+            Reset
+          </button> 
         </div>
       </header>
 
       <div className={page.panel}>
-          <Grid grid={state.grid}
-                onCellChange={handleCellChange} 
-          />
+        {state.status === "solved" && (
+          <div className={styles.solvedBanner} role="status" aria-live="polite">
+            <div className={styles.solvedBannerText}>
+              <div>🎉 Solved!</div>
+              <div className={styles.solvedBannerSubtext}>Yay! You did it!</div>
+            </div>
+          </div>
+        )} 
+        <Grid grid={state.grid}
+              conflicts={state.conflicts}
+              onCellChange={handleCellChange} 
+        />
       </div>
     </section>
   );

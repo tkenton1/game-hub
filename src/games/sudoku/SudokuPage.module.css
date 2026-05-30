@@ -1,0 +1,47 @@
+/* SudokuPage.module.css */
+
+.solvedBanner {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+
+  border: 1px solid var(--border, rgba(127, 127, 127, 0.35));
+  border-radius: 14px;
+
+  background: color-mix(in srgb, var(--link, #646cff) 18%, var(--bg, #242424));
+  color: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  font-weight: 700;
+}
+
+.solvedBannerText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 36px;
+}
+
+.solvedBannerSubtext {
+  font-weight: 500;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+@keyframes popIn {
+  from {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.solvedBanner {
+  animation: popIn 1500ms ease-out;
+}

@@ -19,3 +19,10 @@
 .cell:focus {
   background: color-mix(in srgb, var(--link, #646cff) 18%, transparent);
 }
+
+.conflict {
+  color: red;
+  background: rgba(255, 77, 77, 0.12);
+  outline: 2px solid rgba(255, 77, 77, 0.5);
+  outline-offset: -2px;
+}
